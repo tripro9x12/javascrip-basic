@@ -16,7 +16,7 @@ let width = 20;
 let height = 10;
 let area = width * height;
 document.write('<br> Bài 2: <br>');
-document.write(`diện tích hình chữ nhật là: ${width} + ${height} = ${area}`);
+document.write(`diện tích hình chữ nhật là: ${width} * ${height} = ${area}`);
 /*Bài 3: Dùng hàm prompt() để nhập 2 số từ bàn phím a,b. kiểm tra xem a có phải bội số
 của b hay không. hiển thị ra màn hình bằng hàm alert();
 */
