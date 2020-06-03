@@ -10,51 +10,57 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        form {
+            width: 50%;
+            margin: auto;
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        form button {
+            border-radius: 5px;
+        }
+
+        form button:hover {
+            border-color: aquamarine;
+        }
+    </style>
 </head>
 
-<body  onload="docReady()">
-    <img id="nobita" src="./image/nobita.jpg" style="position:absolute;left:0; top:0;" height="100" width="80" />
+<body>
+    <form action="">
+        <input type="text" id="input">
+        <button type="button" onclick="show_songay()">Tính số ngày</button>
+        <div id="show"></div>
+    </form>
+
     <script>
-        function upArrowPressed() {
-            let element = document.getElementById("nobita");
-            element.style.top = parseInt(element.style.top) - 5 + 'px'
-        }
-        function downArrowPressed() {
-            let element = document.getElementById("nobita");
-            element.style.top = parseInt(element.style.top) + 5 + 'px';
-        }
-        function leftArrowPressed() {
-            let element = document.getElementById("nobita");
-            element.style.left = parseInt(element.style.left) - 5 + 'px';
-        }
-        function rightArrowPressed() {
-            let element = document.getElementById("nobita");
-            element.style.left = parseInt(element.style.left) + 5 + 'px';
-
-        }
-
-        function moveSelection(evt) {
-            switch (evt.keyCode) {
-                case 37:
-                    leftArrowPressed();
+        function show_songay() {
+            let sothang = parseInt(document.getElementById('input').value);
+            switch (sothang) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    document.getElementById('show').innerHTML = 'tháng ' + sothang + ' có 31 ngày';
                     break;
-                case 39:
-                    rightArrowPressed();
+                case 2:
+                    document.getElementById('show').innerHTML = 'tháng ' + sothang + ' có 28 or 29 ngày';
                     break;
-                case 38:
-                    upArrowPressed();
-                    break;
-                case 40:
-                    downArrowPressed();
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    document.getElementById('show').innerHTML = 'tháng ' + sothang + ' có 30 ngày';
                     break;
             }
+            return sothang;
+
         }
-
-        function docReady() {
-            window.addEventListener('keydown', moveSelection);
-        }
-
-
     </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
