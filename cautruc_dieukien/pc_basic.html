@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        #main{
+            width: 360px;
+            border: 1px solid #090909;
+            margin: auto;
+            padding: 10px;
+        }
+        #main input{
+            width: 100%;
+        }
+        #main table{
+            width: 100%;
+            margin-left: 10px;
+        }
+        #main tr td button{
+            width: 60px;
+            height: 40px;
+            margin-top: 20px;
+            color: blue;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <input type="text" id="kq">
+        <table>
+            <tr>
+                <td><button type="button" value="1" onclick="set_number(this.value)">1</button></td>
+                <td><button type="button" value="2" onclick="set_number(this.value)">2</button></td>
+                <td><button type="button" value="3" onclick="set_number(this.value)">3</button></td>
+                <td><button type="button" value="+" onclick="set_number(this.value)">+</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" value="4" onclick="set_number(this.value)">4</button></td>
+                <td><button type="button" value="5" onclick="set_number(this.value)">5</button></td>
+                <td><button type="button" value="6" onclick="set_number(this.value)">6</button></td>
+                <td><button type="button" value="-" onclick="set_number(this.value)">-</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" value="7" onclick="set_number(this.value)">7</button></td>
+                <td><button type="button" value="8" onclick="set_number(this.value)">8</button></td>
+                <td><button type="button" value="9" onclick="set_number(this.value)">9</button></td>
+                <td><button type="button" value="*" onclick="set_number(this.value)">x</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" value="Xóa" onclick="xoa()">Xóa</button></td>
+                <td><button type="button" value="0" onclick="set_number(this.value)">0</button></td>
+                <td><button type="button" value="=" onclick=" ketqua()">=</button></td>
+                <td><button type="button" value="/" onclick="set_number(this.value)">/</button></td>
+            </tr>
+        </table>
+        <script>
+            let x = "";
+            function show(id){
+                return document.getElementById(id);
+            }
+            function set_number(number){
+                x += number;
+               show('kq').value = x;
+            }
+            function xoa(){
+                x = '';
+                show('kq').value = x;
+            }
+            function ketqua(){
+                show('kq').value = (eval(show('kq').value));
+                x = show('kq').value;
+            }
+        </script>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
