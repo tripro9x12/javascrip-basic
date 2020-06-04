@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        #main {
+            width: 30%;
+            border: 1px solid #090909;
+            margin: 20px auto;
+            padding: 30px 20px;
+        }
+
+        #switch_1, #switch_2, #switch_3{
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 20px;
+            margin-top: 20px;
+        }
+
+        #switch_1 input, #switch_2 input, #switch_3 input{
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        #switch_1 .slider, #switch_2 .slider, #switch_3 .slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.4s;
+        }
+
+        #switch_1 .slider:before, #switch_2 .slider:before,  #switch_3 .slider:before {
+            position: absolute;
+            content: "";
+            height: 28px;
+            width: 28px;
+            left: 4px;
+            bottom: -3px;
+            background-color: rgb(206, 203, 203);
+            transition: .4s;
+            box-shadow: 1px 1px 2px 2px rgb(206, 203, 203);
+        }
+
+        #switch_1 input:checked+.slider {
+            background-color: rgba(30, 211, 142, 0.7);
+        }
+        #switch_2 input:checked+.slider {
+            background-color: rgba(88, 128, 236, 0.7);
+        }
+        #switch_3 input:checked+.slider {
+            background-color: rgba(236, 88, 95, 0.7);
+        }
+
+        #switch_1 input:checked+.slider:before {
+            transform: translateX(26px);
+            background-color: rgb(4, 129, 102);
+        }
+        #switch_2 input:checked+.slider:before {
+            transform: translateX(26px);
+            background-color: rgb(13, 100, 212);
+        }
+        #switch_3 input:checked+.slider:before {
+            transform: translateX(26px);
+            background-color: rgb(192, 6, 6);
+        }
+
+        /* Rounded sliders */
+        #switch_1 .slider, #switch_2 .slider, #switch_3 .slider {
+            border-radius: 34px;
+        }
+
+        #switch_1 .slider:before, #switch_2 .slider:before, #switch_3 .slider:before {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+
+
+        <label id="switch_1" >
+            <input onclick="check(this.id)" type="checkbox" id="input_switch_1">
+            <span class="slider"></span>
+        </label>
+        <label for="" style="padding-left: 30px; font-weight: bold;">GOOD</label><br>
+
+        <label id="switch_2" >
+            <input onclick="check(this.id)" type="checkbox" id="input_switch_2">
+            <span class="slider"></span>
+        </label>
+        <label for="" style="padding-left: 30px; font-weight: bold;">CHEAP</label><br>
+
+        <label id="switch_3" >
+            <input onclick="check(this.id)" type="checkbox" id="input_switch_3">
+            <span class="slider"></span>
+        </label>
+        <label for="" style="padding-left: 30px; font-weight: bold;">FAST</label><br>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../bt_good-fast-cheap/good-fast-cheap.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
