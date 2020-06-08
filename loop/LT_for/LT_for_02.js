@@ -58,7 +58,7 @@ function tam_giac_three() {
     for (var i = 1; i <= m; i++) {
         for (var j = 1; j <= m; j++) {
             if (j <= m - i) {
-                document.write('     &nbsp');
+                document.write('   ');
             } else {
                 document.write(' * ');
             }
@@ -74,7 +74,7 @@ function tam_giac_four() {
     for (var i = m; i >= 1; i--) {
         for (var j = 1; j <= m; j++) {
             if (j <= m - i) {
-                document.write('     &nbsp');
+                document.write('   ');
             } else {
                 document.write(' * ');
             }
@@ -94,7 +94,7 @@ function hinh_CN() {
             if (i == 1 || i == m || j == 1 || j == n) {
                 document.write(' * ');
             } else {
-                document.write('&nbsp' + '&nbsp'); // để space nó không nhận;
+                document.write('   '); // để space nó không nhận;
             }
         }
         document.write('<br>');
@@ -130,7 +130,6 @@ function traitim() {
     document.writeln('      *      ');
 }
 /*document.write nó không nhận space tạo khoảng chắn, còn dùng &nbsp thì khó 
-căn chỉnh khoảng chắn. dùng for thì e không biết cách căn chỉnh khoảng chắn phù hợp.
+căn chỉnh khoảng chắn.
 */
-
 traitim();
