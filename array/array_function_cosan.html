@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <script>
+        /* Viết một chương trình Javascript để nối tất cả 
+           các phần tử trong một mảng chuỗi lại với nhau.
+        */
+        function Bai1() {
+            const myColor = ["Red", "Green", "White", "Black"];
+            console.log(myColor.join(','));
+        }
+        Bai1();
+
+
+        /*Viết một chương trình nhận một số nhập vào và chèn dấu (-) giữa 2  số chẵn.
+         Ví dụ nếu bạn nhập vào 025468 thì kết quả của chương trình sẽ là 0-254-6-8.
+        */
+        function Bai2() {
+            let number = parseInt(prompt("nhập number: "));
+            let str_number = number.toString();
+            const result = [str_number[0]];
+            for (var i = 1; i < str_number.length; i++) {
+                if (str_number[i - 1] % 2 == 0 && str_number[i] % 2 == 0) {
+                    result.push('-', str_number[i]);
+                } else {
+                    result.push(str_number[i]);
+                }
+            }
+            console.log(result.join(''));
+        }
+        // Bai2();
+
+        /*Viết một chương trình nhập vào một chuỗi và chuyển các ký tự chữ thường trong chuỗi
+         vừa nhập sang thành dạng chữ hoa. Ví dụ: nếu bạn nhập vào chuỗi 
+         'The Quick Brown Fox' kết quả của chương trình là 'tHE qUICK bROWN fOX'.
+        */
+
+        function Bai3() {
+            let string = prompt("Nhập chuỗi: ");
+            var UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            var LOWER = 'abcdefghijklmnopqrstuvwxyz';
+            var result = [];
+            // for(var i = 0; i<string.length;i++){
+            //     if(UPPER.indexOf(string[i]) !== -1 ){
+            //         result.push(string[i].toLowerCase());
+            //     }else if(LOWER.indexOf(string[i]) !== -1){
+            //         result.push(string[i].toUpperCase());
+            //     }
+            // }
+            // console.log(result.join(''));
+            //}
+
+            for (var i = 0; i < string.length; i++) {
+                if (UPPER.includes(string[i]) == 1) {
+                    result.push(string[i].toLowerCase());
+                } else if (LOWER.includes(string[i]) == 1) {
+                    result.push(string[i].toUpperCase());
+                }
+            }
+            console.log(result.join(''));
+        }
+    
+        Bai3();
+
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
