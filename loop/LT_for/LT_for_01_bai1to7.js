@@ -31,7 +31,7 @@ function check_nhietDo() {
         }
     }
 }
-check_nhietDo();
+// check_nhietDo();
 
 
 
@@ -87,7 +87,7 @@ function sum_fibonacci() {
     }
     console.log(`Tổng là: ${sum}`);
 }
-// sum_fibonacci();
+sum_fibonacci();
 
 
 

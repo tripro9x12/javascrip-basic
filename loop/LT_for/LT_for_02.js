@@ -1,6 +1,6 @@
 //Bài 1: In dãy Fibonacci
 function Fibonacci() {
-    let n = parseInt(prompt('Nhập phần tử thứ n trong dãy fanonaci'));
+    let n = parseInt(prompt('Nhập phần tử thứ n trong dãy fibonacci'));
     let a = 0, b = 1, temp;
     let i = 1;
     console.log(`dãy fibonacci từ 1 đến ${n}`);
