@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Bài tập: Do you love me</title>
+    <title>Title</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,43 +10,20 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <style>
-        #main {
-            text-align: center;
-            width: 100vw;
-            height: 100vh;
-        }
-
-        #main button {
-            width: 80px;
-            border-radius: 5px;
-        }
-
-        #main button:hover {
-            background-color: aqua;
-            border-color: black;
-        }
-    </style>
 </head>
 
 <body>
-    <div id="main">
-        <h1>你有爱我吗</h1>
-        <button type="button" onclick="yes();">没有</button>
-        <button type="button" id="no" onmouseover="set_no();">有</button>
-    </div>
     <script>
-        function yes() {
-            alert('\"<3\"');
+        let array = [-3, 5, 1, 3, 2, 10];
+        let max = array[0];
+        let index = 0;
+        for (var i = 0; i < array.length; i++){
+            if(max<array[i]){
+                max = array[i];
+                index = i;
+            }
         }
-        function set_no() {
-            const no = document.getElementById('no');
-            let height = window.innerHeight;
-            let width = window.innerWidth;
-            no.style.position = 'absolute';
-            no.style.left = Math.floor(Math.random() * width) + 'px';
-            no.style.top = Math.floor(Math.random() * height) + 'px';
-        }
+        console.log(`index ${index}: Max = ${max}`);
     </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
