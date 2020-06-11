@@ -29,20 +29,25 @@
 
 
     <script>
+        let array = ['T', 'Ô', 'I', ' ', 'M', 'U', 'Ố', 'N', ' ', '有', ' ', '爱', ' ', '人'];
+        let i = 0;
+        let form = document.getElementById('main-text');
         function text() {
-            let form = document.getElementById('main-text').value = '';
-            let array = ['T', 'ô', 'i', ' ', 'L', 'à', ' ', 'M', 'ộ', 't', ' ', 'Đ', 'ứ', 'a', ' ', 'N', 'g', 'ố', 'c', '!', '!'];
-            let i = 0;
-
-            while(i<array.length){
-                for(var j = 0; j<i;j++){
-                    form.value += array[i];
+            if (i < array.length) {
+                i++
+                form.value = "";
+                for (let j = 0; j < i; j++) {
+                    form.value += array[j];
                 }
-                i++;
+            } else {
+                form.value = "";
+                i = 0;
             }
-            form.value = '';
+            setTimeout(function () {
+                let str = document.getElementById("main-text").value;
+                document.getElementById("main-text").value = str.slice(0, str.length - 1);
+            }, 1)
         }
-        text();
     </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
