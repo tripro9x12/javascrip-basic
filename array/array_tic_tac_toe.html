@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        #main {
+            width: 60%;
+            margin: auto;
+        }
+
+        tr,
+        td {
+            border: 1px solid #090909;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+        }
+
+        td:hover {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+
+    </div>
+    <script>
+        let array = [['.', '.', '.', '.', '.'], ['.', '.', '.', '.', '.'], ['.', '.', '.', '.', '.'], ['.', '.', '.', '.', '.'], ['.', '.', '.', '.', '.']]
+        function drawTable() {
+            let table = '<table border = 1>'
+            for (let i = 0; i < array.length; i++) {
+                table += '<tr>';
+                for (let j = 0; j < array[i].length; j++) {
+                    table += '<td onclick = "check(' + i + ',' + j + ')">' + array[i][j] + '</td>';
+                }
+                table += '</tr>';
+            }
+            table += '</table>';
+            document.getElementById('main').innerHTML = table;
+        }
+        drawTable();
+
+        let flag = true;
+        let dem = 0;
+        function check(i, j) {
+            dem++
+            if (array[i][j] === '.') {
+                if (dem % 2 == 1) {
+                    array[i][j] = 'O';
+                    flag = !flag;
+                    drawTable();
+                } else {
+                    array[i][j] = 'X';
+                    flag = !flag;
+                    drawTable();
+                }
+            }
+        }
+        // function truong_hop() {
+        //     for (let i = 0; i < array.length; i++) {
+        //         for (let j = 0; j < array[i].length; i++) {
+        //             if (array[i][j] == array[i][j + 1] && array[i][j] == array[i][j + 2] || array[i][j] == array[i][j - 1] && array[i][j] == array[i][j - 2]
+        //                 || array[i][j] == array[i][j - 1] && array[i][j] == array[i][j + 1]) {
+        //                 alert('người thắng cuộc');
+        //             } else if (array[i][j] == array[i + 1][j] && array[i][j] == array[i + 2][j] || array[i][j] == array[i - 1][j] && array[i][j] == array[i - 2][j]
+        //                 || array[i][j] == array[i - 1][j] && array[i + 1][j] == array[i][j]) {
+        //                 alert('người thắng cuộc');
+        //             }
+        //             else if (array[i][j] == array[i + 1][j + 1] && array[i][j] == array[i + 2][j + 2]
+        //             ) {
+        //                 alert('người thắng cuộc');
+        //             }
+        //         }
+        //     }
+
+        // }
+        // truong_hop();
+
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
