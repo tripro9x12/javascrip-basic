@@ -79,9 +79,9 @@
     border: 1px solid #ff7a7a;
     position: relative;
 }
-/* #main .content-2 .form-dangky input:focus{
-    border-color: #6055a5 !important;
-} */
+#main .content-2 .form-dangky input:focus{
+    outline-color: #6055a5 !important;
+}
 #main .content-2 .form-dangky div:nth-child(1)> .fa{
     position: absolute;
     top: 10px;

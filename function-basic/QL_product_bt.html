@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        #main{
+            width: 70%;
+            margin: 0 auto;
+        }
+        #main #add-product{
+            background: rgba(0,0,0,0.1);
+            width: 500px;
+            padding: 20px;
+        }
+        #main #add-product input[type="text"]{
+            width: 300px;
+            height: 35px;
+        }
+        button{
+            width: 80px;
+            height: 35px;
+            color: white;
+            background: rgb(107, 202, 104);
+            border-radius: 4px;
+            border: 1px solid rgb(107, 202, 104);
+        }
+        h3{
+            line-height: 60px;
+        }
+        #show-product{
+            margin-top: 20px;
+            text-indent: 20px;
+        }
+        tr,td:nth-child(1){
+            width: 300px;
+        }
+        table{
+            border-collapse: collapse;
+        }
+    </style>
+  </head>
+  <body>
+      <div id="main">
+          <h3>Add New Product</h3>
+          <form id="add-product">
+              <input type="text" name="" id="text-product" placeholder="New Product">
+              <button type="button" onclick="addProduct();">Add</button>
+          </form>
+          <h3>Display All Product</h3>
+          <div id="show-product">
+              <h5>Product Name</h5>
+              <div id="show"></div>
+          </div>
+      </div>
+
+      <script>
+          let name_product;
+          let arr = [];
+          function addProduct(){
+              name_product = document.getElementById('text-product').value;
+              arr.push(name_product);
+            //   alert(`add ${name_product}`);
+              showProduct(arr);
+          }
+          function showProduct(arr){
+              let i = 0;
+              let table ='';
+              table += '<table>';
+              for(i;i<arr.length;i++){
+                  table+=`<tr><td>${arr[i]}</td>
+                       <td><button onclick='editProduct(${i});'>Edit</button><td>
+                        <td><button onclick= 'deleteProduct(${i})'>Delete</button><td></tr>`;
+                  
+              }
+              table+='</table>'
+              document.getElementById('show').innerHTML = table;
+          }
+
+          function deleteProduct(i){
+            //   delete arr[i]; dùng delete thì giá trị trả về là undefined
+            x
+              showProduct(arr);             
+          }
+          function editProduct(i){
+              arr[i] = prompt('Nhập tên muốn edit:');
+              showProduct(arr);
+          }
+
+      </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
