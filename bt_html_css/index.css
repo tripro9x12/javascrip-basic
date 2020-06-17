@@ -9,6 +9,7 @@
     width: 100%;
     height: 100vh;
     background-color: rgba(226, 72, 85,0.6);
+    background-image: url('./image/bg-intro-desktop.png');
     /* justify-content: space-around; */
 }
 #main .content{
@@ -17,7 +18,6 @@
 #main .content-1{
     display: flex;
     align-items: center;
-    height: 100vh;
 }
 #main .content-1 h1{
     line-height: 50px;
@@ -79,6 +79,16 @@
     border: 1px solid #ff7a7a;
     position: relative;
 }
+#main .content-2 .form-dangky div:nth-child(1) > input::placeholder,
+#main .content-2 .form-dangky input[type="password"]::placeholder{
+    color: #ff7a7a;
+    font-weight: 400;
+}
+#main .content-2 .form-dangky div:nth-child(2) > input::placeholder,
+#main .content-2 .form-dangky div:nth-child(3) > input::placeholder{
+    color: #6055a5;
+    font-weight: 400;
+}
 #main .content-2 .form-dangky input:focus{
     outline-color: #6055a5 !important;
 }
@@ -123,5 +133,43 @@
     color: #ff7a7a;
 }
 
-
+/*máy tính bản*/
+@media screen and (max-width: 992px){
+    #main{
+        padding: 20px 70px;
+    }
+    #main .content{
+        flex: 1;
+    }
+    #main .content-2 .free{
+        width: 450px;
+    }
+    #main .content-2 .form-dangky{
+        width: 450px;
+    }
+    #main .content-2 .form-dangky input{
+        width: 390px;
+        height: 48px;
+    }
+}
+@media screen and (max-width: 800px){
+    #main{
+        flex-direction: column;
+        height: auto;
+        padding: 16px;
+        width: 100%;
+        background-image: url('./image/bg-intro-mobile.png');
+    }
+    #main .content-1{
+        width: 100%;
+        margin-bottom: 100px ;
+        text-align: center;
+    }
+    #main .content-2 .free,#main .content-2 .form-dangky,#main .content-2 .form-dangky input{
+        width: 100%;
+    }
+    #main .content-2{
+        margin: 0px 16px !important;
+    }
+}
 
