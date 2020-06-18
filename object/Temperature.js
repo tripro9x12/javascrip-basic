@@ -1,6 +1,10 @@
 function Temperature(doC){
     this.doC = doC;
-
+    this.setDoC = function(doC){
+        if(doC>-273){
+            return doC;
+        }
+    }
     this.doF = ()=>{
         return ( doC * 1.8 ) +  32;
     }
