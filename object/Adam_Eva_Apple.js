@@ -1,67 +1,74 @@
-class Apple{
-    constructor(weight){
+class Apple {
+    constructor(weight) {
         this.weight = weight;
     }
 
-    decrease(){
+    decrease() {
         this.weight--;
     }
-    isEmpty(){
-        if(this.weight>0){
+    isEmpty() {
+        if (this.weight > 0) {
             return true;
-        }else return false;
+        } else return false;
     }
-    getWeight(){
+    getWeight() {
         return this.weight;
     }
-    
+
 };
 
-class Human{
-    constructor(name, gender, weight){
+class Human {
+    constructor(name, gender, weight) {
         this.name = name;
         this.gender = gender;
         this.weight = weight;
     }
-    isMale(){
-        if(this.gender == 'male'){
+    isMale() {
+        if (this.gender == 'male') {
             return true;
-        }else return false;
+        } else return false;
     }
-    setGender(){
+    setGender() {
 
     }
-    checkApple(Apple){
-        if(Apple.weight<0){
+    checkApple(Apple) {
+        if (Apple.weight < 0) {
             return false;
-        }else return true;
+        } else return true;
     }
 
-    eat(Apple){
-        if(Apple.isEmpty()){
-            //ăn hết không chừa miếng nào;
-           while(Apple.weight>0){
-               this.weight++;
-               Apple.decrease();
-           }
+    eat(Apple, human) {
+        if (Apple.isEmpty()) {
+            //2 người ăn, mỗi người ăn một nữa;
+            while (Apple.weight > 0) {
+                if (Apple.weight % 2 == 0) {
+                    this.weight++;
+                    Apple.decrease();
+                }else{
+                    human.weight++;
+                    Apple.decrease();
+                }
+            }
         }
         return this.weight;
     }
-    say(string){
+    say(string) {
         console.log(string);
     }
-    getName(){
+    getName() {
         return `tên: ${this.name}`;
     }
-    getWeight(){
+    getWeight() {
         return `cân nặng: ${this.weight}`;
     }
 }
 let apple = new Apple(10);
-let Adam = new Human('adam','male',45);
+let Adam = new Human('adam', 'male', 45);
+let Eva = new Human('eva', 'female', 40);
 Adam.say(prompt('nói gì đó:'));
 console.log(Adam.checkApple(apple));
 console.log(Adam.isMale());
-console.log(Adam.eat(apple));
+console.log(Adam.eat(apple,Eva));
+console.log(Eva.eat(apple,Adam));
 console.log(`${Adam.getName()}, ${Adam.getWeight()}`);
 console.log(apple.getWeight());
