@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+      <script>
+          class Remote{
+              constructor(ma){
+                  this.ma = ma;
+              }
+              bat = true;
+              status = (tivi)=>{
+                  this.bat = false;
+                  tivi.status = false;
+                  console.log(`tivi đã được tắt`);                
+              }
+              chuyenKenh = (ma,tivi)=>{
+                  tivi.chuyenKenh = ma;
+                  console.log(`chuyển đến mã ${ma}`)                                  
+              }
+              amLuong = (tivi,donvi) =>{
+                  tivi.amLuong+=donvi;  
+                  return tivi.amLuong;                
+              }
+              
+          }
+
+          class Tivi{
+              constructor(kenhDangPhat, amLuong){
+                  this.kenhDangPhat = kenhDangPhat;
+                  this.amLuong = amLuong;
+              }
+              status = true;
+              chuyenKenh = (kenh)=>{
+                  this.kenhDangPhat = kenh;
+                  console.log(`chuyển đến kênh ${this.kenhDangPhat}`);
+              }
+              dkAmLuong = (remote)=>{
+                if(this.amLuong>=0 && this.amLuong<=100){
+                      remote.amLuong;
+                  }
+              }
+          }
+
+          let tivi = new Tivi('abc',20);
+          let remote = new Remote(20);
+          tivi.status;
+          tivi.chuyenKenh(7);
+          remote.chuyenKenh(3,tivi);
+          console.log(`âm lượng sau khi tăng lên là: ${remote.amLuong(tivi,2)}`);
+          remote.status(tivi);
+
+      </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
